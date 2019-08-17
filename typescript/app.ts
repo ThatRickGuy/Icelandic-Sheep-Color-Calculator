@@ -1,4 +1,5 @@
 import * as icc from "./IcelandicColorCalculator";
+import * as CLRC from "./CLRC";
 
 var calc = new icc.Calculator();
 var ram = new icc.Sheep(new icc.GenePair(icc.Gene1.black, icc.Gene1.black),
@@ -10,3 +11,11 @@ var ewe = new icc.Sheep(new icc.GenePair(icc.Gene1.black, icc.Gene1.black),
 
 
 var all = calc.GetLambColorMatrix(ram, ewe);
+
+
+var clrc = new CLRC.CLRC(); 
+var request = clrc.getSheepFromCLRC('564456');
+request.then(value => {
+    console.log(value.toString());
+})
+
